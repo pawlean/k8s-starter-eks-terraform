@@ -6,21 +6,21 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "subnet_1" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.0.0/20"
-  availability_zone       = "eu-east-1b"
+  availability_zone       = "eu-west-1b"
   map_public_ip_on_launch = true
 }
 
 resource "aws_subnet" "subnet_2" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.16.0/20"
-  availability_zone       = "eu-east-1c"
+  availability_zone       = "eu-west-1c"
   map_public_ip_on_launch = true
 }
 
 resource "aws_subnet" "subnet_3" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.32.0/20"
-  availability_zone       = "eu-east-1d"
+  availability_zone       = "eu-west-1d"
   map_public_ip_on_launch = true
 }
 
