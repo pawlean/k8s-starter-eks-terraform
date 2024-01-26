@@ -20,7 +20,7 @@ resource "aws_subnet" "subnet_2" {
 resource "aws_subnet" "subnet_3" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.32.0/20"
-  availability_zone       = "eu-west-1d"
+  availability_zone       = "eu-west-1a"
   map_public_ip_on_launch = true
 }
 
