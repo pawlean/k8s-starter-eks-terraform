@@ -8,7 +8,7 @@ unzip terraform_${TF_VERSION}_linux_amd64.zip
 sudo mv -f terraform /usr/local/bin/
 rm terraform_${TF_VERSION}_linux_amd64.zip
 
-# terraform init
+terraform init
 
 # # Install KubeCTL
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
@@ -23,9 +23,9 @@ rm -rf awscliv2.zip
 rm -rf aws
 
 aws configure
+#
+# terraform apply -var vpc_id=$(aws ec2 describe-vpcs | jq -r .Vpcs[0].VpcId)
 
-terraform apply -var vpc_id=$(aws ec2 describe-vpcs | jq -r .Vpcs[0].VpcId)
+# aws eks update-kubeconfig --region eu-west-1 --name my-cluster-eks
 
-aws eks update-kubeconfig --region eu-west-1 --name my-cluster-eks
-
-kubectl apply -f app.yaml
+# kubectl apply -f app.yaml 
